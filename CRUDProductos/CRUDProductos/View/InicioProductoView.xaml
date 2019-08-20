@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRUDProductos.View.InicioProductoView"
+             xmlns:clase="clr-namespace:CRUDProductos.VIewModel">
+
+    <ContentPage.BindingContext>
+        <clase:InicioProductoViewModel></clase:InicioProductoViewModel>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label Text="DATOS DE CATEGORIA:"></Label>
+                <Label Text="Category Name "></Label>
+                <Entry Text="{Binding CategoriaF}"></Entry>
+                <Entry Text="{Binding CategoriaProductF}"></Entry>
+                <Label Text="DATOS DE LOS PRODUCTOS:"></Label>
+                <Entry Text="{Binding NombreProductoF}"></Entry>
+                <Button Text="Guardar" Command="{Binding GuardarCommand}"></Button>
+            </StackLayout>
+            <StackLayout>
+                
+                <ListView ItemsSource="{Binding Producto}" HasUnevenRows="True">
+                    
+                    
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding NombreProduto}"></TextCell>
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+
+    
+</ContentPage>
