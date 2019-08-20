@@ -76,6 +76,7 @@ namespace CRUDProductos.VIewModel
                 productoNuevo.Categoria = CategoriaF;
 
                 var resultadoDb = Repositorio.CrearProducto(productoNuevo);
+                Producto.Add(productoNuevo);
             }
         }
 
